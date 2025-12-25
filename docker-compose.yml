@@ -1,0 +1,16 @@
+services:
+  browser-use-openrouter-rest-api:
+    build: .
+    container_name: browser-use-openrouter-rest-api
+    ports:
+      - "25000:8000" # Rest API port
+      - "5901:5900" # VNC port
+    shm_size: 2gb
+    environment:
+      # Pass the API Key from your host system or .env file
+      - OPENROUTER_API_KEY=<open router key>
+      # Defaults (can be overridden)
+      - OPENROUTER_MODEL_NAME=google/gemini-2.5-flash-preview-09-2025
+      - OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+      - ANONYMIZED_TELEMETRY=false
+    restart: unless-stopped

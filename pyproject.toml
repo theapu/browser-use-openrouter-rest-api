@@ -1,0 +1,16 @@
+[project]
+name = "browser-use-api"
+version = "0.1.0"
+description = "Dockerized API for browser-use"
+requires-python = ">=3.11"
+dependencies = [
+    "browser-use",
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "langchain-openai",
+    "playwright"
+]
+
+[tool.uv]
+# This ensures uv manages the environment correctly
